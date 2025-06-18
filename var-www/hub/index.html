@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub BI - Narreal</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+	body {
+ 	    margin: 0;
+	    padding: 0;
+	    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	    background: linear-gradient(135deg, #808080 0%, #606060 100%); /* Gradiente cinza */
+	    min-height: 100vh;
+	}
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+        
+      	.title {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #e2e8f0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+        
+        .search-box {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        
+        .search-input:focus {
+            border-color: #4299e1;
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a0aec0;
+            font-size: 18px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .tool-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #4a5568;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .tool-card:hover {
+            border-color: #4299e1;
+            box-shadow: 0 4px 12px rgba(66, 153, 225, 0.15);
+            transform: translateY(-2px);
+        }
+        
+       <!-- .tool-icon {-->
+       <! --     width: 48px;-->
+       <! --     height: 48px;-->
+       <! --     margin-bottom: 12px;-->
+       <! --     border-radius: 8px;-->
+       <! --     display: flex;-->
+       <! --     align-items: center;-->
+       <! --     justify-content: center;-->
+       <! --     font-size: 24px;-->
+       <! --     margin-left: auto;-->
+       <! --     margin-right: auto;-->
+	<! --    object-fit: contain;-->
+      <! --  }-->
+        .tool-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+        .rstudio-icon {
+    background: rgba(117, 170, 219, 0.1) !important; /* 10% de opacidade */
+}
+.shiny-icon {
+    background: rgba(255, 107, 107, 0.1) !important;
+}
+.metabase-icon {
+    background: rgba(80, 158, 227, 0.1) !important;
+}
+.nextcloud-icon {
+    background: rgba(0, 130, 201, 0.1) !important;
+}
+.yourls-icon {
+    background: rgba(0, 130,201,0.1) !importatn;
+}
+        .tool-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        
+        .tool-description {
+            font-size: 11px;
+            color: #718096;
+            line-height: 1.3;
+        }
+        
+        .status-dot {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 8px;
+            height: 8px;
+            background: #48bb78;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px white, 0 0 8px rgba(72, 187, 120, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .title {
+                font-size: 1.8em;
+            }
+            
+            .logo {
+                width: 150px;
+            }
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="header">
+        <img src="assets/images/logo-narreal.png" class="logo" alt="Narreal Pesquisa e Consultoria">
+        <h1 class="title">Escolha as ferramentas</h1>
+        <p class="subtitle">Hub de BI</p>
+
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Buscar ferramentas..." id="search">
+            <span class="search-icon">🔍</span>
+        </div>
+    </div>
+        
+        <div class="tools-grid" id="toolsGrid">
+            <a href="https://rstudio.narreal.com.br" class="tool-card" target="_blank" data-name="rstudio">
+                <div class="status-dot"></div>
+                <div class="tool-icon rstudio-icon">
+    <img src="assets/images/logo-rstudio.svg" alt="RStudio">
+</div>
+                <div class="tool-name">RStudio</div>
+                <div class="tool-description">Ambiente de desenvolvimento R para análise estatística</div>
+            </a>
+            
+            <a href="https://shiny.narreal.com.br" class="tool-card" target="_blank" data-name="shiny">
+                <div class="status-dot"></div>
+                <div class="tool-icon shiny-icon">
+    <img src="assets/images/logo-shiny.jpg" alt="Shiny Server"">
+</div>
+                <div class="tool-name">Shiny Server</div>
+                <div class="tool-description">Aplicações web interativas e dashboards em R</div>
+            </a>
+            
+            <a href="https://metabase.narreal.com.br" class="tool-card" target="_blank" data-name="metabase">
+                <div class="status-dot"></div>
+                <div class="tool-icon metabase-icon">
+    <img src="assets/images/logo-metabase.png" alt="Metabase">
+</div>
+                <div class="tool-name">Metabase</div>
+                <div class="tool-description">Business Intelligence e visualização de dados</div>
+            </a>
+            
+            <a href="https://nextcloud.narreal.com.br" class="tool-card" target="_blank" data-name="nextcloud">
+                <div class="status-dot"></div>
+                <div class="tool-icon nextcloud-icon">
+    <img src="assets/images/logo-nextcloud.svg" alt="Nextcloud">
+</div>
+                <div class="tool-name">Nextcloud</div>
+                <div class="tool-description">Armazenamento na nuvem e colaboração</div>
+            </a>
+           <a href="http://curto.narreal.com.br/admin/" class="tool-card" target="_blank" data-name="yourls"> 
+              <div class="status-dot"></div>
+              <div class="tool-icon yourls-icon">
+    <img src="assets/images/logo-yourls.png" alt="YOURLS">
+</div> 
+	      <div class="tool-name">YOURLS</div>
+              <div class="tool-description">Encurtador de links</div>
+           </a>
+	   <a href="http://portfolio.narreal.com.br/" class="tool-card" target="_blank" data-name="yourls">
+	    <div class="status-dot"></div>
+	    <div class="tool-icon narreal-icon">
+	        <img src="assets/images/logo-narreal.png" alt="YOURLS">
+	    </div>
+	    <div class="tool-name">Portfolio</div>
+	    <div class="tool-description">Portfólio de Painéis</div>
+	</a>
+	<a href="http://shiny.narreal.com.br/narreal/" class="tool-card" target="_blank" data-name="yourls">
+	    <div class="status-dot"></div>
+	    <div class="tool-icon shiny-icon">
+	        <img src="assets/images/logo-shiny.jpg" alt="Narreal">
+	    </div>
+	    <div class="tool-name">Financeiro</div>
+	    <div class="tool-description">Financeiro</div>
+	</a>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Narreal Pesquisa e Consultoria - Estatística de forma simples</p>
+            <p>Email: narrealconsultoria@gmail.com | Telefone: (61) 98268-3678</p>
+        </div>
+    </div>
+
+    <script>
+        // Funcionalidade de busca
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const toolCards = document.querySelectorAll('.tool-card');
+            
+            toolCards.forEach(card => {
+                const toolName = card.querySelector('.tool-name').textContent.toLowerCase();
+                const toolDescription = card.querySelector('.tool-description').textContent.toLowerCase();
+                
+                if (toolName.includes(searchTerm) || toolDescription.includes(searchTerm)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+        
+        // Animação de entrada dos cards
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.tool-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'all 0.5s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

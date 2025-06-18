@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub BI - Narreal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .app-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+        .app-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+        .app-card:hover::before {
+            left: 100%;
+        }
+        .app-icon {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .app-title {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .app-description {
+            color: #7f8c8d;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+        .app-url {
+            font-size: 0.8em;
+            color: #3498db;
+            font-weight: 500;
+        }
+        .status-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #27ae60;
+            box-shadow: 0 0 10px rgba(39, 174, 96, 0.5);
+        }
+        @media (max-width: 768px) {
+            .apps-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Hub BI - Narreal</h1>
+        
+        <div class="apps-grid">
+            <a href="https://rstudio.narreal.com.br" class="app-card" target="_blank">
+                <div class="status-indicator"></div>
+                <div class="app-icon">📊</div>
+                <div class="app-title">RStudio Server</div>
+                <div class="app-description">Ambiente de desenvolvimento R para análise de dados e estatística</div>
+                <div class="app-url">rstudio.narreal.com.br</div>
+            </a>
+            
+            <a href="https://shiny.narreal.com.br" class="app-card" target="_blank">
+                <div class="status-indicator"></div>
+                <div class="app-icon">✨</div>
+                <div class="app-title">Shiny Server</div>
+                <div class="app-description">Aplicações web interativas e dashboards em R</div>
+                <div class="app-url">shiny.narreal.com.br</div>
+            </a>
+            
+            <a href="https://metabase.narreal.com.br" class="app-card" target="_blank">
+                <div class="status-indicator"></div>
+                <div class="app-icon">📈</div>
+                <div class="app-title">Metabase</div>
+                <div class="app-description">Business Intelligence, relatórios e visualizações</div>
+                <div class="app-url">metabase.narreal.com.br</div>
+            </a>
+            
+            <a href="https://nextcloud.narreal.com.br" class="app-card" target="_blank">
+                <div class="status-indicator"></div>
+                <div class="app-icon">☁️</div>
+                <div class="app-title">Nextcloud</div>
+                <div class="app-description">Armazenamento na nuvem e colaboração</div>
+                <div class="app-url">nextcloud.narreal.com.br</div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Opcional: verificar status das aplicações
+        async function checkAppStatus() {
+            const apps = document.querySelectorAll('.app-card');
+            
+            apps.forEach(async (app) => {
+                const indicator = app.querySelector('.status-indicator');
+                const url = app.href;
+                
+                try {
+                    // Note: Isso pode não funcionar devido a CORS, é mais para demonstração
+                    const response = await fetch(url, { mode: 'no-cors', method: 'HEAD' });
+                    indicator.style.background = '#27ae60'; // Verde para online
+                } catch (error) {
+                    indicator.style.background = '#e74c3c'; // Vermelho para offline
+                }
+            });
+        }
+        
+        // Executar verificação ao carregar a página (opcional)
+        // checkAppStatus();
+    </script>
+</body>
+</html>

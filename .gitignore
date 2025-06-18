@@ -1,3 +1,8 @@
 node_modules/
 .env
 *.log
+
+# Logs de sincronização var-www
+var-www-sync.log
+var-www/*.tmp
+var-www/*.log
