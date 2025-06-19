@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hub BI - Narreal</title>
+    <title>Hub de painéis</title>
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
     <style>
@@ -107,20 +107,6 @@
             box-shadow: 0 4px 12px rgba(66, 153, 225, 0.15);
             transform: translateY(-2px);
         }
-        
-       <!-- .tool-icon {-->
-       <! --     width: 48px;-->
-       <! --     height: 48px;-->
-       <! --     margin-bottom: 12px;-->
-       <! --     border-radius: 8px;-->
-       <! --     display: flex;-->
-       <! --     align-items: center;-->
-       <! --     justify-content: center;-->
-       <! --     font-size: 24px;-->
-       <! --     margin-left: auto;-->
-       <! --     margin-right: auto;-->
-	<! --    object-fit: contain;-->
-      <! --  }-->
         .tool-icon img {
     width: 100%;
     height: 100%;
@@ -140,7 +126,7 @@
     background: rgba(0, 130, 201, 0.1) !important;
 }
 .yourls-icon {
-    background: rgba(0, 130,201,0.1) !importatn;
+    background: rgba(0, 130,201,0.1) !important;
 }
         .tool-name {
             font-size: 14px;
@@ -195,59 +181,24 @@
     <div class="container">
         <div class="header">
             <img src="assets/images/logo-narreal.png" class="logo" alt="Narreal Pesquisa e Consultoria">
-            <h1 class="title">Escolha as ferramentas</h1>
-            <p class="subtitle">Hub de BI</p>
+            <h1 class="title">Escolha os painéis</h1>
+            <p class="subtitle">Hub painéis</p>
             
             <div class="search-box">
-                <input type="text" class="search-input" placeholder="Buscar ferramentas..." id="searchInput">
+                <input type="text" class="search-input" placeholder="Buscar painéis..." id="searchInput">
                 <span class="search-icon">🔍</span>
             </div>
         </div>
         
-        <div class="tools-grid" id="toolsGrid">
-            <a href="https://rstudio.narreal.com.br" class="tool-card" target="_blank" data-name="rstudio">
-                <div class="status-dot"></div>
-                <div class="tool-icon rstudio-icon">
-    <img src="assets/images/logo-rstudio.svg" alt="RStudio">
-</div>
-                <div class="tool-name">RStudio</div>
-                <div class="tool-description">Ambiente de desenvolvimento R para análise estatística</div>
-            </a>
-            
-            <a href="https://shiny.narreal.com.br" class="tool-card" target="_blank" data-name="shiny">
+        <div class="tools-grid" id="toolsGrid">            
+            <a href="https://shiny.narreal.com.br/CentralDF/" class="tool-card" target="_blank" data-name="shiny">
                 <div class="status-dot"></div>
                 <div class="tool-icon shiny-icon">
-    <img src="assets/images/logo-shiny.jpg" alt="Shiny Server"">
+    <img src="assets/images/logo-shiny.jpg" alt="Central DF"">
 </div>
-                <div class="tool-name">Shiny Server</div>
-                <div class="tool-description">Aplicações web interativas e dashboards em R</div>
+                <div class="tool-name">Central DF</div>
+                <div class="tool-description">Aplicação com dados do DF</div>
             </a>
-            
-            <a href="https://metabase.narreal.com.br" class="tool-card" target="_blank" data-name="metabase">
-                <div class="status-dot"></div>
-                <div class="tool-icon metabase-icon">
-    <img src="assets/images/logo-metabase.png" alt="Metabase">
-</div>
-                <div class="tool-name">Metabase</div>
-                <div class="tool-description">Business Intelligence e visualização de dados</div>
-            </a>
-            
-            <a href="https://nextcloud.narreal.com.br" class="tool-card" target="_blank" data-name="nextcloud">
-                <div class="status-dot"></div>
-                <div class="tool-icon nextcloud-icon">
-    <img src="assets/images/logo-nextcloud.svg" alt="Nextcloud">
-</div>
-                <div class="tool-name">Nextcloud</div>
-                <div class="tool-description">Armazenamento na nuvem e colaboração</div>
-            </a>
-           <a href="http://curto.narreal.com.br/admin/" class="tool-card" target="_blank" data-name="yourls"> 
-              <div class="status-dot"></div>
-              <div class="tool-icon yourls-icon">
-    <img src="assets/images/logo-yourls.png" alt="YOURLS">
-</div> 
-	      <div class="tool-name">YOURLS</div>
-              <div class="tool-description">Encurtador de links</div>
-           </a>
         </div>
         
         <div class="footer">
