@@ -6,8 +6,4 @@ node_modules/
 var-www-sync.log
 var-www/*.tmp
 var-www/*.log
-.DS_Store
-**/.DS_Store
-.DS_Store
-**/.DS_Store
 bash_admin/
