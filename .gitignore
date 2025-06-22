@@ -7,3 +7,4 @@ var-www-sync.log
 var-www/*.tmp
 var-www/*.log
 bash_admin/
+.DS_Store
