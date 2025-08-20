@@ -1,0 +1,10 @@
+commit b65dea477a172135dfac65d2c05a9f482ec6d85b
+Author: narreal-consultoria <narreal.consultoria@gmail.com>
+Date:   Tue Aug 19 22:49:31 2025 -0300
+
+    20250819
+
+A	var-www/treino/exercises/Abdominal_canivete.gif
+A	var-www/treino/index.html
+A	var-www/treino/script.js
+A	var-www/treino/style.css
