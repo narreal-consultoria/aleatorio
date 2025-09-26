@@ -1,0 +1,7 @@
+commit 8c68cb99bf7c0ba27eb82f4cc02a529f90a72731
+Author: narreal-consultoria <narreal.consultoria@gmail.com>
+Date:   Wed Aug 20 04:45:55 2025 +0200
+
+    Ignore git-sync backup directories
+
+A	var-www/.gitignore

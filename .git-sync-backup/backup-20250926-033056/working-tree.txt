@@ -1,0 +1,2 @@
+?? .git-sync-backup/backup-20250926-033056/
+?? erro_ftp.R
