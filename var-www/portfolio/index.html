@@ -107,26 +107,24 @@
             box-shadow: 0 4px 12px rgba(66, 153, 225, 0.15);
             transform: translateY(-2px);
         }
+        .tool-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
         .tool-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     border-radius: 4px;
 }
-        .rstudio-icon {
-    background: rgba(117, 170, 219, 0.1) !important; /* 10% de opacidade */
-}
-.shiny-icon {
-    background: rgba(255, 107, 107, 0.1) !important;
-}
-.metabase-icon {
-    background: rgba(80, 158, 227, 0.1) !important;
-}
-.nextcloud-icon {
-    background: rgba(0, 130, 201, 0.1) !important;
-}
-.yourls-icon {
-    background: rgba(0, 130,201,0.1) !important;
+        .rstudio-icon, .shiny-icon, .metabase-icon, .nextcloud-icon, .yourls-icon {
+    background: transparent !important;
 }
         .tool-name {
             font-size: 14px;
@@ -221,14 +219,6 @@
 </div>
                 <div class="tool-name">Central DF</div>
                 <div class="tool-description">Aplicação com dados do DF</div>
-            </a>
-                   <a href="https://shiny.narreal.com.br/PesqEle26/" class="tool-card" target="_blank" data-name="shiny">
-                <div class="status-dot"></div>
-                <div class="tool-icon shiny-icon">
-    <img src="assets/images/logo-shiny.jpg" alt="PesqEle26"">
-</div>
-                <div class="tool-name">PesqEle26</div>
-                <div class="tool-description">Painel com os resultados das pesquisas eleitoriais realizadas em 2026 para o DF</div>
             </a>
         </div>
         
